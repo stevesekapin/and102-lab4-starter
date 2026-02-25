@@ -115,4 +115,4 @@ Computer Science Student
 AND102 – Android Development  
 CodePath Android Program
 
-https://imgur.com/a/vD1WMiC
+https://imgur.com/a/vD1WMiC.gif
