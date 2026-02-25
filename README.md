@@ -108,11 +108,4 @@ By completing this lab, I learned how to:
 **Steve Sekapin**  
 Computer Science Student  
 
----
-
-## 📌 Course
-
-AND102 – Android Development  
-CodePath Android Program
-
 https://imgur.com/a/vD1WMiC.gif
