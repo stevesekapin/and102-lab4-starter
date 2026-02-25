@@ -4,31 +4,29 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-
-private const val TAG = "CampgroundDetailActivity"
-const val CAMPGROUND_EXTRA = "CAMPGROUND_EXTRA"
+import com.bumptech.glide.Glide
 
 class DetailActivity : AppCompatActivity() {
-    private lateinit var campgroundNameTV: TextView
-    private lateinit var campgroundDescriptionTV: TextView
-    private lateinit var campgroundLatLongTV: TextView
-    private lateinit var campgroundImageIV: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        // TODO: Find the remaining Views for the screen
-        campgroundNameTV = findViewById(R.id.campgroundName)
+        val campground =
+            intent.getSerializableExtra(MainActivity.CAMPGROUND_EXTRA) as? Campground
+                ?: return
 
+        val imageView = findViewById<ImageView>(R.id.detailImage)
+        val nameTextView = findViewById<TextView>(R.id.detailName)
+        val locationTextView = findViewById<TextView>(R.id.detailLocation)
+        val descriptionTextView = findViewById<TextView>(R.id.detailDescription)
 
-        // TODO: Get the extra from the Intent
+        nameTextView.text = campground.name
+        locationTextView.text = campground.latLong
+        descriptionTextView.text = campground.description
 
-
-        // TODO:  Set the name, location, and description information
-
-
-        // TODO: Load the image using Glide
-
+        Glide.with(this)
+            .load(campground.getImageUrl())
+            .into(imageView)
     }
 }
